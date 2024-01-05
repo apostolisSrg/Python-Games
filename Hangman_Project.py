@@ -8,15 +8,16 @@ hidden_word = words[randrange(0, len(words))]
 active_game = True
 guessed_letters = []
 rounds = 0
+print("Welcome to Hangman!\nYou have 15 attempts to guess the word:\n")
 while active_game:
     print(f"Round{rounds + 1}".rjust(10))
     while True:
-        user_input = input("Give a letter: ").lower()
+        user_input = input("Guess a letter: ").lower()
         user_input = user_input.strip()
         if not user_input.isalpha():
-            print("You did not type a letter.Try again")
+            print("You did not type a letter.Try again!\n")
         elif len(user_input) != 1:
-            print("Type only 1 character")
+            print("Type only 1 character!\n")
         else:
             break
     if user_input not in guessed_letters:
